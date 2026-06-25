@@ -62,6 +62,7 @@ Release with the APK attached.
 | Problem | Fix |
 |---|---|
 | `Execution failed for task ':app:processReleaseManifest'` mentioning a missing icon | Re-run `flutter pub get`; confirm `android/app/src/main/res/mipmap-*/ic_launcher.png` exist (they're included in this repo) |
+| `Your project's Gradle version (X) is lower than Flutter's minimum supported version (Y)` | Flutter's "stable" channel keeps raising its minimum required Gradle/AGP version over time. Bump `distributionUrl` in `android/gradle/wrapper/gradle-wrapper.properties` to the version Flutter asks for (or newer), and bump the AGP (`com.android.application`) version in `android/settings.gradle` to one that supports that Gradle version — check the [AGP–Gradle compatibility table](https://developer.android.com/build/releases/gradle-plugin#compatibility) |
 | `SDK location not found` | Run `flutter doctor`; ensure `ANDROID_HOME`/`ANDROID_SDK_ROOT` is set, or let `flutter` auto-write `android/local.properties` on first build |
 | Gradle build very slow on first run | Expected — Gradle downloads its distribution + dependencies once; subsequent builds are cached (also true in CI, via the Gradle cache step) |
 | `flutter analyze` reports issues | These are non-fatal in CI (`--no-fatal-infos`) by default; fix at your convenience, or tighten CI by removing that flag |
