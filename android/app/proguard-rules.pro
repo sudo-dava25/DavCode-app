@@ -1,0 +1,2 @@
+-keep class com.davcode.dev.** { *; }
+-dontwarn io.flutter.embedding.**

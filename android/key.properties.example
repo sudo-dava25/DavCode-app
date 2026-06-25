@@ -1,0 +1,6 @@
+# Copy this file to android/key.properties and fill in your real signing
+# values to produce a properly signed release APK. See docs/RELEASE.md.
+storePassword=YOUR_KEYSTORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=davcode
+storeFile=../davcode-release.jks

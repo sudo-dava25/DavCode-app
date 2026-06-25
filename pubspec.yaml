@@ -1,0 +1,65 @@
+name: dav_code
+description: "Dav Code - Mobile IDE: code editor, file manager, terminal, Git, and AI assistant."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management (classic providers — no code generation required,
+  # which keeps the GitHub Actions build a single `flutter build apk` step)
+  flutter_riverpod: ^2.5.1
+
+  # Routing
+  go_router: ^14.2.0
+
+  # Storage
+  shared_preferences: ^2.2.3
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  flutter_secure_storage: ^9.2.2
+
+  # File / permissions
+  permission_handler: ^11.3.1
+  file_picker: ^8.0.0+1
+
+  # Editor / syntax highlighting
+  highlight: ^0.7.0
+
+  # Networking (AI providers)
+  http: ^1.2.1
+
+  # UI
+  google_fonts: ^6.2.1
+
+  # Utils
+  uuid: ^4.4.0
+  intl: ^0.19.0
+  equatable: ^2.0.5
+
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/fonts/
+
+  # Custom monospace editor font (place your .ttf files in assets/fonts/)
+  # Uncomment after adding actual font files:
+  # fonts:
+  #   - family: FiraCode
+  #     fonts:
+  #       - asset: assets/fonts/FiraCode-Regular.ttf
+  #       - asset: assets/fonts/FiraCode-Medium.ttf
+  #         weight: 500
